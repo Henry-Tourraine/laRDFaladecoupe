@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\Jean-Bogoce\\Desktop\\france_découper\\france_a_la_decoupe\\webthree\\contracts\\Election.sol": {
+      "lastModificationDate": 1647219977302,
+      "contentHash": "f0e941f701f6a1bdee0f1c722139d0e2",
+      "sourceName": "contracts/Election.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "Elections2022"
+      ]
+    }
+  }
+}

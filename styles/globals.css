@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@500;700;900&family=Zen+Kurenaido&display=swap');
+
+@font-face {
+  font-family: "Bebas";
+  src: url("/fonts/em/BebasNeue-Regular.eot") format("eot"),
+  url("/fonts/em/BebasNeue-Regular.otf") format("otf"),
+  url("/fonts/em/BebasNeue-Regular.ttf") format("ttf"),
+  url("/fonts/em/BebasNeue-Regular.woff") format("woff"),
+  url("/fonts/em/BebasNeue-Regular.woff2") format("woff2")
+ }
+
+ @font-face {
+  font-family: "Seagram";
+  src: url("/fonts/lu/Seagram.ttf") format("ttf")
+ }
+
+/*SCROOLBAR */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  width: 0px;
+ 
+}
+ 
+
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body{
+animation: body 3s ease-in-out;
+}
+
+@keyframes body{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+  
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+  
+}
+
+img{
+  padding: 0;
+  margin: 0;
+}
+.carouselImage{
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) ;
+  margin: 1em;
+  
+  
+
+}
+.carouselImage *{
+  border-radius: 1vw 1vh;
+  padding: 0.3em 0.5em;
+  
+  
+  
+
+}
+.carouselImage>*>*{
+  position: absolute;
+  transform:  rotateZ(0deg);
+ 
+ 
+ 
+}
+.imageFace{
+  transform: translate3d(0px, 0px,20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.imageBack{
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: solid black 1px;
+  border-radius: 1vw 1vw;
+  position:absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-20px) rotateY(180deg);
+  background-image:   linear-gradient(to right, rgba(27, 74, 231, 0.5), rgba(255, 251, 251, 0.5), rgba(192, 26, 26, 0.5)), url("../public/img/qr.png");
+  background-size: cover;
+  
+  
+}
+button{
+  text-decoration: none;
+  outline: none;
+  padding: 0.5em;
+  border-radius: 1.5vw 1.5vw;
+  border: solid 1px rgb(73, 120, 230);
+}
+button{
+  background: white;
+  color: rgb(31, 116, 253);
+  
+  
+}
+
+button:hover{
+  background: rgb(31, 116, 253);
+  color: white;
+  cursor: pointer;
+ 
+}
+.pulse{
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+.pulse:hover{
+  animation: pulseOver 0.5s ease-in-out infinite ;
+}
+.journauxWrapper{
+  display: flex;
+  flex-flow: "wrap row";
+  font-size: 2em;
+  justify-content: space-evenly;
+  margin-bottom: 1.5em;
+}
+.journauxTitre{
+  
+  text-transform: uppercase;
+}
+.parution{
+  max-width: 400px;
+  min-width: 300px;
+  min-height: 300px;
+  max-height: 400px;
+  background: white;
+  border-radius: 1vw 1vw;
+  display: flex;
+ /* flex-flow: wrap column;*/
+ 
+ 
+}
+
+.parution *{
+  color: black;
+  background-color: white;
+}
+.parution::-webkit-scrollbar {
+  width: 25px;
+  height: 10px;
+}
+
+/* Track */
+.parution::-webkit-scrollbar-track {
+  width: 0;
+}
+ 
+/* Handle */
+.parution::-webkit-scrollbar-thumb {
+  background: transparent; 
+ 
+}
+.parution:hover::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0); 
+  border-radius: 10px;
+ 
+}
+.journauxMenu{
+  width: 1em!important;
+  height: 1em !important;
+}
+
+.articleTitle{
+  color: black;
+  background: inherit;
+}
+
+.articleWrapper{
+  color: black;
+   background: lightgrey; 
+   border-radius: 1vw 1vw;
+   padding: 0.5em;
+   position: relative;
+   font-size: 0.7em;
+   border: solid black 1px;
+   
+}
+.lire{
+  border-radius: 1vw 1vw;
+
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: rgba(58, 69, 131, 0.753);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  
+}
+.articleWrapper:hover .lire{
+ 
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  cursor: pointer;
+  color: white;
+}
+@keyframes pulse{
+  0%{
+     box-shadow: 0 0 0px 0px rgb(31, 116, 253);
+  }
+  
+
+  100%{
+  
+    box-shadow: 0 0 10px 10px rgb(108, 159, 241);
+  }
+}
+@keyframes pulseOver{
+  0%{
+    box-shadow: 0 0 0px 0px rgb(31, 116, 253);
+  }
+  
+
+  70%{
+    
+    box-shadow: 0 0 10px 10px rgb(108, 159, 241);
+  }
+  100%{
+    
+    box-shadow: 0 0 20px 20px rgb(192, 216, 255);
+  }
+}
+.imageBack>*{
+  position: relative;
+}
+
+.rotatedY{
+  animation: r 0.5s ease-in-out;
+  transform: rotate3d(0, 1, 0, 180deg);
+ 
+}
+
+
+
+
+.nonRotated{
+  animation: nr 0.5s ease-in-out;
+  transform: rotate3d(0, 1, 0, 0deg);
+
+}
+
+@keyframes r{
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+  
+ 
+
+  100% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
+
+@keyframes nr{
+  0% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+  
+ 
+
+  100% {
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+} 
+
+.vote{
+  font-size: 1em;
+}
+.la{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.presWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.layer0{
+  transform: rotateX(50deg);
+}
+.layer1{
+  transform: rotateX(50deg) translateY(-15px);
+}
+.layer2{
+  transform: rotateX(50deg) translateY(-30px);
+}
+.layer3{
+  transform: rotateX(50deg) translateY(-45px);
+}
+.canvas{
+  height: 400px !important; 
+  width: 500px !important;
+  opacity: 1;
+  border-radius: 1vw 1vh;
+  animation: appear 1s ease-in-out;
+
+}
+@keyframes appear{
+  0%{
+opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.presh2{
+  margin: 0;
+  animation: topbottom 1s;
+  font-size: 3em;
+  font-weight: bold;
+  
+}
+.presh2{
+  margin: 0;
+  animation: topbottom 1s;
+  font-size: 2em;
+  font-weight: bold;
+  
+}
+@keyframes topbottom{
+  0%{
+transform: translate(0, -30px);
+  }
+  100%{
+    transform: translate(0, 0);
+  }
+}
+.navbar{
+  padding: 2em;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-items: center;
+  animation: appear 1s ease-in-out;
+}
+
+.answer:hover{
+  cursor: pointer;
+}
+ .answer::after{
+content:'';
+color:red;
+width: inherit;
+height: 100%;
+border-right: solid white 2px;
+padding: 0 0.5em;
+ }
+
+ 
+
+
+
+
+    .editWrapper{
+      display: flex;
+      flex-flow: wrap column;
+      padding: 1em; 
+      align-items: center;
+      justify-content: center;
+      border-radius: 2vw;
+    }
+    .editWrapper p{
+      padding: 0;
+      margin: 0.3em;
+    }
+    .pot *{
+      margin: 0.3em;
+    }
+    .otherActions{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: wrap row;
+      justify-content: center;
+      padding: 1em 1em;
+      border-radius: 2vw;
+     
+      
+    }    
+.otherActions:hover{
+background: rgb(31, 116, 253);
+color: white;
+cursor: pointer;
+}
+
+.precision{
+  font-size: 0.5em;
+}
+
+.navbarMenu:hover{
+  fill: rgb(94, 202, 235)!important;
+  
+}
+.slideOut{
+  transform: translate(-700px, 0);
+  transition: transform 4s ease-in-out;
+}
+.slideOutRight{
+  transform: translate(700px, 0);
+  transition: transform 4s ease-in-out;
+}
+.slideOutq{
+  transform: translate(-1400px, 0);
+  transition: transform 1s ease-in-out;
+}
+.slideOutRightq{
+  transform: translate(1400px, 0);
+  transition: transform 1s ease-in-out;
+}
+
+.fb {
+  filter: grayscale(100%);
+}
+
+
+@media  (max-width: 1250px){
+
+  .editWrapper{
+    display: flex;
+    flex-flow: wrap column;
+    padding: 1em; 
+    align-Items: center;
+  }
+  
+}
+@media (max-width: 912px){
+  .canvas{
+    height: 400px; 
+    width: 500px;
+   
+  }
+  .bribe{
+    font-size:  0.5em;
+  }
+  .precision{
+    font-size: 1em;
+  }
+  
+  
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 576px){
+
+}
+.popup, .popup *, .popup * *, .close, button,.imageFace, .imageFace>*, .imageFace>*>*, .articleContent, .articleContent *{
+  color: black;
+    background: white;}
+
+p, option, select, div, input, label{
+  background: inherit;
+  color: inherit;
+}    
+
+select{
+  padding: 0;
+  max-height: 2em;
+  font-size: 0.8em
+}
+
+.blue{
+  color: rgb(37, 71, 223);
+}
+.grey{
+  color: grey;
+}
+.red{
+  color: rgb(194, 38, 38);
+}
+.light{
+  color: grey;
+  font-size: 0.8em;;
+}
+
+.final{
+  border-radius: 0vw;
+  border: none;
+  border-bottom: solid white 1px;
+  margin: 0.4em;
+}
+.final:focus{
+  text-indent:10px;
+  border-radius: 2vw;
+  border: none;
+  border-bottom: solid white 1px;
+  margin: 0.4em;
+}
