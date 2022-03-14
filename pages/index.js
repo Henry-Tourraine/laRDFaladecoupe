@@ -9,10 +9,8 @@ import React, { useRef, useEffect, useState, useMemo } from 'react'
 
 import Presentation from '../components/Presentation';
 import Journaux from '../components/Journaux';
-import Explain from '../components/Explain';
 import { useAppContext } from '../components/Context';
 import { useInView } from 'react-intersection-observer';
-import SVG from '../components/menu.svg';
 
 import ABI from '../webthree/artifacts/contracts/Election.sol/Elections2022.json'
 
@@ -152,6 +150,7 @@ function President({ win, req }) {
 
 
 function Home({ journaux, percent }) {
+
   let popup = useAppContext();
   let [token, setToken] = useState("0");
   let router = useRouter();
@@ -275,11 +274,12 @@ function Home({ journaux, percent }) {
 }
 
 export const getStaticProps = async (props) => {
-  console.log(props);
+  const domain = props.ggf;
+  console.log("htosname ", props);
   let prop = {};
 
-  await fetch("http://localhost:3000/api/journaux").then(e => e.json()).then(r => { prop.journaux = r });
-  await fetch("http://localhost:3000/api/candidates").then(e => e.json()).then(r => {
+  await fetch("lardfaladecoupe-31dy4japf-henry-tourraine.vercel.app/api/journaux").then(e => e.json()).then(r => { prop.journaux = r });
+  await fetch("lardfaladecoupe-31dy4japf-henry-tourraine.vercel.app/api/candidates").then(e => e.json()).then(r => {
     prop.candidates = r.candidates
     let candidates = r.candidates
     console.log("CANDIDATES :", candidates);
