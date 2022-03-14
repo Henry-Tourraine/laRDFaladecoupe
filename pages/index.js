@@ -12,6 +12,7 @@ import Journaux from '../components/Journaux';
 import { useAppContext } from '../components/Context';
 import { useInView } from 'react-intersection-observer';
 
+
 import ABI from '../webthree/artifacts/contracts/Election.sol/Elections2022.json'
 
 import { ethers } from 'ethers';
@@ -273,13 +274,12 @@ function Home({ journaux, percent }) {
   )
 }
 
-export const getStaticProps = async (props) => {
-  const domain = props.ggf;
-  console.log("htosname ", props);
+export const getServerSideProps = async (context) => {
+  console.log("htosname ", context.req.headers.referer);
   let prop = {};
 
-  await fetch("lardfaladecoupe-31dy4japf-henry-tourraine.vercel.app/api/journaux").then(e => e.json()).then(r => { prop.journaux = r });
-  await fetch("lardfaladecoupe-31dy4japf-henry-tourraine.vercel.app/api/candidates").then(e => e.json()).then(r => {
+  await fetch(context.req.headers.referer + "/api/journaux").then(e => e.json()).then(r => { prop.journaux = r });
+  await fetch(context.req.headers.referer + "/api/candidates").then(e => e.json()).then(r => {
     prop.candidates = r.candidates
     let candidates = r.candidates
     console.log("CANDIDATES :", candidates);
@@ -303,8 +303,7 @@ export const getStaticProps = async (props) => {
 
   });
   return {
-    props: prop,
-    revalidate: 30
+    props: prop
   }
 
 
