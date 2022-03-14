@@ -151,85 +151,85 @@ function President({ win, req }) {
 
 
 function Home({ journaux, percent }) {
-
-  let popup = useAppContext();
-  let [token, setToken] = useState("0");
-  let router = useRouter();
-  let c = () => { if (!!popup.popupDisplay === true) { window.scrollTo(0, popup.offset) } }
-
-  console.log("PERCENT", percent)
-
-  let Address = process.env.address_contract;
-
-  if (typeof window !== "undefined") {
-    if (window.ethereum != 'undefined') {
-      (async () => await window.ethereum.request({ method: 'eth_requestAccounts' }))()
+  /*
+    let popup = useAppContext();
+    let [token, setToken] = useState("0");
+    let router = useRouter();
+    let c = () => { if (!!popup.popupDisplay === true) { window.scrollTo(0, popup.offset) } }
+  
+    console.log("PERCENT", percent)
+  
+    let Address = process.env.address_contract;
+  
+    if (typeof window !== "undefined") {
+      if (window.ethereum != 'undefined') {
+        (async () => await window.ethereum.request({ method: 'eth_requestAccounts' }))()
+      }
+  
     }
-
-  }
-  let [ce, setC] = useState([]);
-  const z = async () => {
-    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const contract = new ethers.Contract(Address, ABI.abi, signer);
-    setC([])
-    names.map(async (e, index) => {
-      try {
-        let temp = await contract.GetVotesPerCandidate(index)
-        setC(prev => [...prev, { name: e.name, votes: temp.toNumber() }])
-        console.log(temp);
-
-
-      } catch (e) { console.log(e) }
-    })
-  }
-
-
-
-  let questions = [{ question: "Qu&apos;est-ce que La République Démocratique de France à la découpe", answer: <p>Habituellement l&#8217;électeur est appelé à voter pour les présidentielles une fois tous les 5 ans et a comme seul pouvoir son bulletin.<br /> La RDF à la découpe est un projet vous permettant de vivre une simulation d&apos;élections 2022 avec d&apos;autres leviers de pouvoir...</p> },
-  { question: "Comment je participe ?", answer: <p>Tout d&apos;abord vous pouvez voter autant de fois que vous le désirez pour autant de candidats qu&#8217;il y en a sur ce trombinoscope.<br /> Vous pouvez ensuite tenter de déstabiliser ou favoriser des candidats en soudoyant les éditions de journaux l&apos;Univers et le Canard Laquais. <br /> Enfin vous pouvez également corrompre les assesseurs pour qu&apos;ils bourrent les urnes !</p> },
-  { question: "Quel est l'intérêt ?", answer: <p>Dans la RDF, le président nouvellement élu redistribue généreusement l&apos;argent accumulé par tous les candidats durant la campagne à tous ses électeurs sous forme du token de la RDF.</p> },
-  {
-    question: "Et concrètement ?", answer: <p>Le site restera ouvert au vote jusqu&#8217;au 23 avril à 23h59, la journée du 24 sera réservée pour le dépouillage SEULS LES VOTES et LES BOURRAGES d&#8217;URNE COMPTERONT les autres actions du site sont destinés à influencer les sondages et par conséquent les nouveaux venus sur le site.<br /> Enfin le 25 avril vous pourrez venir retirer vos tokens de la RDF (en cliquant sur le menu en haut à droite) si un des candidats pour lesquels vous avez voté est élu. <br /> Exemple: <p style={{ fontSize: "0.8em" }}>Les fonds totaux des votes, de la corruption et du soudoiement s&apos;élèvent à 5000 MATIC.<br /> Mr Jadot est élu avec 20 électeurs. Le token de la RDF aura une valeur de 250 MATIC. <br />Si vous avez voté 3 fois pour Mr. Jadot vous pourrez retirer sur votre wallet, au maximum 3 tokens soit 750 MATIC soit actuellement 967,5 € .</p></p>
-  },
-  { question: "Je n&apos;arrive pas à voter", answer: <p style={{ display: "flex", flexFlow: "wrap row" }}>Pour cela il vous faut un crypto wallet comme <Link href="https://metamask.io/" ><a style={{ maxWidth: "6em", padding: 0, margin: 0, width: "fit-content !important" }}>Metamask</a></Link> ou <Link href="https://phantom.app/"><a style={{ padding: 0, margin: 0, width: "fit-content", maxWidth: "6em" }}>Phantom</a></Link></p> },
-  { question: "J&apos;ai une question", answer: <p>Vous pouvez nous contacter à lardfaladecoupe@gmail.com</p> }
-  ]
-  let [answerDisplay, setAnswerDisplay] = useState(questions.map(e => false))
-
-  useEffect(() => {
-
-    window.addEventListener("scroll", c)
-
-
-    return () => window.removeEventListener("scroll", c)
-  }, [popup])
-
-
-  const { ref, inView, entry } = useInView({
-
-    threshold: 0
-  });
-
-
-
-
-
-  useEffect(() => {
-    console.log("Q", entry ? entry.target : null);
-    if (entry) [...entry.target.children].forEach(e => { e.style.transform = "translate(0, 0)"; })
-  }, [inView])
-
-
+    let [ce, setC] = useState([]);
+    const z = async () => {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(Address, ABI.abi, signer);
+      setC([])
+      names.map(async (e, index) => {
+        try {
+          let temp = await contract.GetVotesPerCandidate(index)
+          setC(prev => [...prev, { name: e.name, votes: temp.toNumber() }])
+          console.log(temp);
+  
+  
+        } catch (e) { console.log(e) }
+      })
+    }
+  
+  
+  
+    let questions = [{ question: "Qu&apos;est-ce que La République Démocratique de France à la découpe", answer: <p>Habituellement l&#8217;électeur est appelé à voter pour les présidentielles une fois tous les 5 ans et a comme seul pouvoir son bulletin.<br /> La RDF à la découpe est un projet vous permettant de vivre une simulation d&apos;élections 2022 avec d&apos;autres leviers de pouvoir...</p> },
+    { question: "Comment je participe ?", answer: <p>Tout d&apos;abord vous pouvez voter autant de fois que vous le désirez pour autant de candidats qu&#8217;il y en a sur ce trombinoscope.<br /> Vous pouvez ensuite tenter de déstabiliser ou favoriser des candidats en soudoyant les éditions de journaux l&apos;Univers et le Canard Laquais. <br /> Enfin vous pouvez également corrompre les assesseurs pour qu&apos;ils bourrent les urnes !</p> },
+    { question: "Quel est l'intérêt ?", answer: <p>Dans la RDF, le président nouvellement élu redistribue généreusement l&apos;argent accumulé par tous les candidats durant la campagne à tous ses électeurs sous forme du token de la RDF.</p> },
+    {
+      question: "Et concrètement ?", answer: <p>Le site restera ouvert au vote jusqu&#8217;au 23 avril à 23h59, la journée du 24 sera réservée pour le dépouillage SEULS LES VOTES et LES BOURRAGES d&#8217;URNE COMPTERONT les autres actions du site sont destinés à influencer les sondages et par conséquent les nouveaux venus sur le site.<br /> Enfin le 25 avril vous pourrez venir retirer vos tokens de la RDF (en cliquant sur le menu en haut à droite) si un des candidats pour lesquels vous avez voté est élu. <br /> Exemple: <p style={{ fontSize: "0.8em" }}>Les fonds totaux des votes, de la corruption et du soudoiement s&apos;élèvent à 5000 MATIC.<br /> Mr Jadot est élu avec 20 électeurs. Le token de la RDF aura une valeur de 250 MATIC. <br />Si vous avez voté 3 fois pour Mr. Jadot vous pourrez retirer sur votre wallet, au maximum 3 tokens soit 750 MATIC soit actuellement 967,5 € .</p></p>
+    },
+    { question: "Je n&apos;arrive pas à voter", answer: <p style={{ display: "flex", flexFlow: "wrap row" }}>Pour cela il vous faut un crypto wallet comme <Link href="https://metamask.io/" ><a style={{ maxWidth: "6em", padding: 0, margin: 0, width: "fit-content !important" }}>Metamask</a></Link> ou <Link href="https://phantom.app/"><a style={{ padding: 0, margin: 0, width: "fit-content", maxWidth: "6em" }}>Phantom</a></Link></p> },
+    { question: "J&apos;ai une question", answer: <p>Vous pouvez nous contacter à lardfaladecoupe@gmail.com</p> }
+    ]
+    let [answerDisplay, setAnswerDisplay] = useState(questions.map(e => false))
+  
+    useEffect(() => {
+  
+      window.addEventListener("scroll", c)
+  
+  
+      return () => window.removeEventListener("scroll", c)
+    }, [popup])
+  
+  
+    const { ref, inView, entry } = useInView({
+  
+      threshold: 0
+    });
+  
+  
+  
+  
+  
+    useEffect(() => {
+      console.log("Q", entry ? entry.target : null);
+      if (entry) [...entry.target.children].forEach(e => { e.style.transform = "translate(0, 0)"; })
+    }, [inView])
+  
+  */
 
   return (
 
     < div className={styles.container} >
-      {new Date().getTime() > new Date(1650751201000).getTime() ? <div><President req={async () => await window.ethereum.request({ method: 'eth_requestAccounts' })} win={async () => await window.ethereum} /></div> : <div>
+      {/* {new Date().getTime() > new Date(1650751201000).getTime() ? <div><President req={async () => await window.ethereum.request({ method: 'eth_requestAccounts' })} win={async () => await window.ethereum} /></div> : <div>
         <Presentation />
 
-        {/*<Presentation />*/}
+       
         <Carousel percent={percent} />
         <Journaux journaux={journaux} path={router.pathname} />
 
@@ -248,10 +248,10 @@ function Home({ journaux, percent }) {
         </div>
         <footer style={{ padding: "2em", display: "flex", flexFlow: "wrap row", justifyContent: "space-evenly", alignItems: "center" }}>
           <div style={{ maxWidth: "7em", maxHeight: "5em", position: "relative", minWidth: "4.5em", minHeight: "4em", cursor: "pointer" }}>
-            <Link href="https://www.facebook.com/Elections-2022-105192315464099">
+            <a href="https://www.facebook.com/Elections-2022-105192315464099">
               <Image src="/icons/facebook.webp" className='fb' alt="facebook" layout="fill" />
 
-            </Link>
+            </a>
           </div>
 
           <img src="/icons/email2.png" alt="facebook" layout="fill" style={{ cursor: "pointer", background: "white", fill: "white", color: "white", filter: "invert(100%)", maxWidth: "5em", maxHeight: "5em", position: "relative", minWidth: "4em", minHeight: "4.5em" }} onClick={() => { router.push('mailto:lardfaladecoupe@gmail.com') }} />
@@ -269,7 +269,8 @@ function Home({ journaux, percent }) {
 
 
 
-      </div>}
+          </div>}*/}
+      "hello"
     </div >
   )
 }
