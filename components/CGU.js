@@ -6,7 +6,7 @@ const CGU = () => {
         <p style={{ textAlign: "center", marginBottom: 0, fontSize: "1.2em" }}>Conditions Générales d’Utilisation</p>
         <p style={{ textAlign: "center", fontSize: "0.5em", margin: "0" }}>En vigueur au 15/04/2022</p>
 
-        <p>Ce document a pour but de définir le cadre dans lequel “l’Utilisateur” pourra se servir du site la-republique-de-france-a-la-decoupe.fr désigné par &quot;le site&quot;.
+        <p>Ce document a pour but de définir le cadre dans lequel “l’Utilisateur” pourra se servir du site la-republique-democratique-de-france-a-la-decoupe.fr désigné par &quot;le site&quot;.
             Toute réclamation pourra être faite à l’adresse suivante <a style={{ cursor: "pointer" }} onClick={() => { router.push("mailto:lardfaladecoupe@gmail.com") }}>lardfaladecoupe@gmail.com.</a></p>
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}> Article 1: Accès au site</p>
@@ -29,7 +29,7 @@ const CGU = () => {
         Toute personne peut reprendre à son compte les visuels et le contrat intelligent utilisé par le site à condition qu’il ne le fasse pas de manière malicieuse dans le but de nuire au bon fonctionnement du site ou dans le but d’usurper l’identité du site.
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 4: Responsabilité</p>
-        L’éditeur du site s’engage à mener les élections jusqu’au bout et à rembourser l’Utilisateur le cas échéant. Il ne pourra pas être tenu responsable de pertes financières ou d’un dysfonctionnement du site  entraînés par le comportement malveillant d’un Utilisateur.
+        L’éditeur du site s’engage à mener les élections jusqu’au bout et à rembourser l’Utilisateur le cas échéant. Il ne pourra pas être tenu responsable de pertes financières ou d’un dysfonctionnement du site  entraînés par le comportement malveillant d’une tierce personne.
         L&apos;Utilisateur ne pourra être remboursé que dans le cas  où il aurait voté pour le candidat élu et que pour une quelconque raison il ne puisse pas retirer ses &quot;tokens&quot;. Il ne le serait alors que du montant qu&apos;il aura gagné.
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 5: Cookies</p>
@@ -38,7 +38,7 @@ const CGU = () => {
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 6: But</p>
         Le site a un but satirique et ne saurait avoir de conséquence sur de réelles élections.
         Le personnel politique présenté sur le site ne reprend que d’apparence et de nom les candidats aux  élections présidentielles 2022 en France déclarés ou putatifs.
-        Les articles de journaux sont générés automatiquement par le site et pourraient décrire la personnalité des candidats qu’ils visent de manière purement fortuite...
+        Les articles de journaux sont générés automatiquement par le site et ne pourraient décrire la personnalité des candidats qu’ils visent que de manière purement fortuite.
 
 
 

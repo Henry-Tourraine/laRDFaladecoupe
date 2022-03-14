@@ -109,7 +109,7 @@ export default function Bribe() {
 
                     <div >
                         <p className="precision">{candidates[subject].fullname} {["perdra", "gagnera"][faveur]} 1 vote par personne qui clique sur l&apos;article.</p>
-                        <p className="precision">Cela affectera les pourcentage visibles sur le site<br /> mais pas le nombre réel de voix.</p>
+                        <p className="precision">Cela affectera les pourcentages visibles sur le site<br /> mais pas le nombre réel de voix.</p>
                     </div>
 
                 </div>
@@ -145,7 +145,7 @@ export default function Bribe() {
                     </div>
                     <div >
                         <p className="precision">{candidates[subject2].fullname} {["perdra", "gagnera"][faveur2]}&nbsp;{judge * judge * (value2)} voix </p>
-                        <p className="precision">Cela affectera le compte réel de voix du candidat mais ne sera pas visible sur le site</p>
+                        <p className="precision">Cela affectera le compte réel de voix du candidat mais ne sera pas visible sur le site (prix en compte pour l'élection)</p>
                     </div>
                     <p>PRIX: {judge * (value2) * 14} MATIC</p>
                     <input style={{ color: "blue", background: "blue" }} type="checkbox" onClick={e => { if (e.target.checked) { setConsent2(true) } else { setConsent2(false) } }} /><p style={{ fontSize: "0.8em" }}>Vous avez lu les CGU et les acceptez (en bas de page)</p>

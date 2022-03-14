@@ -7,19 +7,19 @@ const RenderArticle = (candidate, positivity, template_nb, path_) => {
         template = [
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est antisémite</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} est antisémite</h1><p>Suite aux provocations d'un passant, {candidate.fullname} est sorti{candidate.gender === 0 ? "e" : null} de lui-même et a proféré des insultes à caractère racial.</p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} est antisémite</h1><p>Suite aux provocations d'un passant, {candidate.fullname} est sorti{candidate.gender === 0 ? "e" : null} de {candidate.gender === 0 ? "elle" : "lui"}-même et a proféré des insultes à caractère racial.</p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} a agressé sexuellement ...</strong>,
-                content: <div className="articleContent"><h1>Ce lundi, {candidate.fullname} a agressé sexuellement un lampadaire rue Philidor</h1><p>Il semblerait que {candidate.gender === 1 ? "le candidat" : "la candidate"} avait, selon notre source, 12.4 g/l dans le sang ! Ça joue la podium avec notre Gérard Depardieu narional ! </p></div>
+                content: <div className="articleContent"><h1>Ce lundi, {candidate.fullname} a agressé sexuellement un lampadaire rue Philidor.</h1><p>Il semblerait que {candidate.gender === 1 ? "le candidat" : "la candidate"} avait, selon notre source, 12.4 g/l d'alcool dans le sang ! Ça joue le podium avec notre Gérard Depardieu national ! </p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} a fait un salut nazi !</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} aurait fait un salut nazi lors de son dernier meeting</h1><p> Ce mardi, {candidate.name.substring(0, 1).uppercase + candidate.name.substring(1)} a chaleureusement salué son public en fin de meeting et s'oubliant un peu, a raidi son bras. Un geste qu'aucune caméra n'a manqué !  </p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} aurait fait un salut nazi lors de son dernier meeting</h1><p> Ce mardi, {candidate.name.substring(0, 1).toUpperCase() + candidate.name.substring(1)} a chaleureusement salué son public en fin de meeting et s'oubliant un peu, a raidi son bras. Un geste qu'aucune caméra n'a manqué !  </p></div>
             },
             {
                 titre: <strong className="articleTitle">La déclaration de patrimoine {["A", "E", "O"].includes(candidate.fullname.substring(0, 1)) ? "d'" : "de"} &nbsp;{candidate.fullname}</strong>,
-                content: <div className="articleContent"><h1>{candidate} a oublié de déclarer prèsde la moitié de ses biens</h1><p>{candidate.gender === 1 ? "le candidat" : "la candidate"} qui a fait des tribunaux une seconde demeure se voit à nouveau prix dans un scandale.</p><p> Selon {candidate.gender === 1 ? "lui" : "elle"}, la faute reposerait sur son chat qui aurait (au conditionnel) une phobie administratif récente et aurait par conséquent baclé la déclaration. </p></div>
+                content: <div className="articleContent"><h1>{candidate} a oublié de déclarer près de la moitié de ses biens</h1><p>{candidate.gender === 1 ? "le candidat" : "la candidate"} qui a fait des tribunaux une seconde demeure se voit à nouveau pris dans un scandale.</p><p> Selon {candidate.gender === 1 ? "lui" : "elle"}, la faute reposerait sur son chat qui aurait (au conditionnel) une phobie administratif récente et aurait par conséquent baclé la déclaration. </p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} a fait partie des jeunesses FN !</strong>,
@@ -27,7 +27,7 @@ const RenderArticle = (candidate, positivity, template_nb, path_) => {
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est raciste !</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} est tout simplement raciste</h1><p> {candidate.gender === 1 ? "Il" : "Elle"} a renvoyé un des journalistes avec lesquelles {candidate.gender === 1 ? "il" : "elle"} avait un entretien à ses origines kirghizistanaises lorsque celui-ci demandait d'expliciter son programme électoral. Une honte, {candidate.gender === 1 ? "monsieur" : "madame"}, une honte !</p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} est tout simplement raciste</h1><p> {candidate.gender === 1 ? "Il" : "Elle"} a renvoyé un des journalistes avec lesquelles {candidate.gender === 1 ? "il" : "elle"} avait un entretien, à ses origines kirghizistanaises lorsque celui-ci lui demandait d'expliciter son programme électoral. Une honte, {candidate.gender === 1 ? "monsieur" : "madame"}, une honte !</p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est {candidate.gender === 1 ? "laid" : "laide"} !</strong>,
@@ -52,11 +52,11 @@ const RenderArticle = (candidate, positivity, template_nb, path_) => {
 
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est {candidate.gender === 1 ? "merveilleux" : "merveilleuse"}</strong>,
-                content: <div className="articleContent"><h1>  {candidate.fullname} est merveilleux</h1><p>Chaque jour que nous passons en ta présence nous illumine, ô {candidate.fullname.split(' ')[1]} !</p></div>
+                content: <div className="articleContent"><h1>  {candidate.fullname} est {candidate.gender === 1 ? "merveilleux" : "merveilleuse"}</h1><p>Chaque jour que nous passons en ta présence nous illumine, ô {candidate.fullname.split(' ')[1]} !</p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} va faire surgir la France !</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} va faire surgir la France !</h1><p>Nul doute que {candidate.fullname} est le candidat qui empêchera la France de sombrer dans la décadence !</p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} va faire surgir la France !</h1><p>Nul doute que {candidate.fullname} est {candidate.gender === 1 ? "le candidat" : "la candidate"} qui empêchera la France de sombrer dans la décadence !</p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est {candidate.gender === 1 ? "le plus sexy qui soit" : "la plus sexy qui soit"}</strong>,
@@ -68,7 +68,7 @@ const RenderArticle = (candidate, positivity, template_nb, path_) => {
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est {candidate.gender === 1 ? "le plus haut" : "la plus haute"} dans les sondages</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} est {candidate.gender === 1 ? "le plus haut" : "la plus haute"} dans les sondages</h1><p> En effet, {candidate.fullname} vient de dépasser tous les autres candidats dans un récent sodnage Ipsauce ! </p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} est {candidate.gender === 1 ? "le plus haut" : "la plus haute"} dans les sondages</h1><p> En effet, {candidate.fullname} vient de dépasser tous les autres candidats dans un récent sondage Ipsauce ! </p></div>
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est le mozart de la finance !</strong>,
@@ -76,7 +76,7 @@ const RenderArticle = (candidate, positivity, template_nb, path_) => {
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} est d'une générosité sans commune mesure</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} est d'une générosité sans commune mesure</h1><p> {candidate.gender === 1 ? "Il" : "Elle"} vient de faire un don de 100 000€ à l'hôpital St André où {candidate.gender === 1 ? "il" : "elle"} a pu faire de magnifique photos avec des enfants myopathes !</p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} est d'une générosité sans commune mesure</h1><p> {candidate.gender === 1 ? "Il" : "Elle"} vient de faire un don de 100 000€ à l'hôpital St André où {candidate.gender === 1 ? "il" : "elle"} a pu faire de magnifiques photos avec des enfants myopathes !</p></div>
             }
 
         ]

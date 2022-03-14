@@ -191,7 +191,7 @@ function Home({ journaux, percent }) {
 
 
 
-  let [questions,] = useState([{ question: <div>Qu&apos;st-ce que La République Démocratique de France à la découpe</div>, answer: <p>Habituellement l&#8217;électeur est appelé à voter pour les présidentielles une fois tous les 5 ans et a comme seul pouvoir son bulletin.<br /> La RDF à la découpe est un projet vous permettant de vivre une simulation d&apos;élections 2022 avec d&apos;autres leviers de pouvoir...</p> },
+  let [questions,] = useState([{ question: <div>Qu&apos;est-ce que La République Démocratique de France à la découpe</div>, answer: <p>Habituellement l&#8217;électeur est appelé à voter pour les présidentielles une fois tous les 5 ans et a comme seul pouvoir son bulletin.<br /> La RDF à la découpe est un projet vous permettant de vivre une simulation d&apos;élections 2022 avec d&apos;autres leviers de pouvoir...</p> },
   { question: "Comment je participe ?", answer: <p>Tout d&apos;abord vous pouvez voter autant de fois que vous le désirez pour autant de candidats qu&#8217;il y en a sur ce trombinoscope.<br /> Vous pouvez ensuite tenter de déstabiliser ou favoriser des candidats en soudoyant les éditions de journaux l&apos;Univers et le Canard Laquais. <br /> Enfin vous pouvez également corrompre les assesseurs pour qu&apos;ils bourrent les urnes !</p> },
   { question: "Quel est l'intérêt ?", answer: <p>Dans la RDF, le président nouvellement élu redistribue généreusement l&apos;argent accumulé par tous les candidats durant la campagne à tous ses électeurs sous forme du token de la RDF.</p> },
   {
@@ -258,8 +258,8 @@ function Home({ journaux, percent }) {
 
             </a>
           </div>
-          <div style={{ cursor: "pointer", background: "white", fill: "white", color: "white", filter: "invert(100%)", maxWidth: "5em", maxHeight: "5em", position: "relative", minWidth: "4em", minHeight: "4.5em" }} onClick={() => { router.push('mailto:lardfaladecoupe@gmail.com') }}>
-            <Image src="/icons/email2.png" alt="facebook" layout="fill" /></div>
+          <div style={{ cursor: "pointer", maxWidth: "5em", maxHeight: "5em", position: "relative", minWidth: "4em", minHeight: "4.5em" }} onClick={() => { router.push('mailto:lardfaladecoupe@gmail.com') }}>
+            <Image src="/icons/email2.png" alt="facebook" layout="fill" className="email" /></div>
           <div style={{ display: "flex", flexFlow: "wrap row", justifyContent: "space-evenly", alignItems: "center" }}>
             <p style={{ color: "white", background: "transparent", position: "absolute", fontSize: "2em", fontWeight: "bold", transform: "scale(1.25, 2.1) ", cursor: "pointer" }} onClick={(e) => {
               popup.setPopupContent(<div><CGU /></div>);
@@ -274,7 +274,7 @@ function Home({ journaux, percent }) {
 
 
 
-      </div>}
+      </div >}
 
     </div >
   )
@@ -286,7 +286,7 @@ export const getStaticProps = async (context) => {
 
   dbConnect();
 
-  await Article.find().then(e => prop.journaux = JSON.stringify(e));
+  await Article.find().then(e => prop.journaux = JSON.parse(JSON.stringify(e)));
 
   await Ipsauce.find().then(r => {
     prop.candidates = JSON.stringify(r);

@@ -81,7 +81,7 @@ const Carousel = ({ sondage, percent }) => {
     }
     return (
         <div>
-            <p style={{ fontSize: "2em" }}>Vote pour tes candidats favoris !</p>
+            <p style={{ fontSize: "2em" }}>Votez pour vos candidats favoris !</p>
             <div style={style.imageWrapper}>
                 {
 
@@ -112,14 +112,5 @@ const Carousel = ({ sondage, percent }) => {
 
 }
 
-export const getStaticProps = async (props) => {
-    let f = await fetch(router.pathname + "api/candidates");
-    f = f.json();
-
-    return {
-        props: { sondage: f },
-        revalidate: 30
-    }
-}
 
 export default Carousel;

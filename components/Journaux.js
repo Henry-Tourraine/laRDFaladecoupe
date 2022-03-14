@@ -16,9 +16,9 @@ const Journaux = (props) => {
     let journaux = [];
     try {
 
-        console.log("HELP ", journaux.message);
-        if (props.journaux.message == "success") {
-            journaux = props.journaux.journaux
+        console.log("HELP ", typeof props.journaux);
+        if (props.journaux.length > 0) {
+            journaux = props.journaux;
         } else {
             journaux = []
         }
@@ -41,15 +41,7 @@ const Journaux = (props) => {
             console.log(entry.target);
 
             entry.target.style.transform = "translate(0, 0)";
-            // Each entry describes an intersection change for one observed
-            // target element:
-            //   entry.boundingClientRect
-            //   entry.intersectionRatio
-            //   entry.intersectionRect
-            //   entry.isIntersecting
-            //   entry.rootBounds
-            //   entry.target
-            //   entry.time
+
         });
     };
 
@@ -74,6 +66,7 @@ const Journaux = (props) => {
 
                 {journaux.filter(e => !!e.news === false).length > 0 && Array.isArray(journaux) ? journaux.filter(e => !!e.news === false).map((r, index) => {
                     let candidate = candidates[r.candidate];
+                    console.log(r.candidate);
                     let article = RenderArticle(candidate, r.positivity, r.template, props.path);
                     return <div key={index} className="articleWrapper" >
 

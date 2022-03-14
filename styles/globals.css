@@ -148,10 +148,13 @@ button:hover{
 }
 .journauxWrapper{
   display: flex;
-  flex-flow: "wrap row";
+  flex-flow: wrap row;
   font-size: 2em;
   justify-content: space-evenly;
   margin-bottom: 1.5em;
+}
+.journauxWrapper *{
+  margin: 0.3em;
 }
 .journauxTitre{
   
@@ -458,7 +461,12 @@ cursor: pointer;
   filter: grayscale(100%);
 }
 
-
+.email{
+  background: inherit;
+  fill: white;
+  color: white;
+   filter: invert(100%);
+}
 @media  (max-width: 1250px){
 
   .editWrapper{
@@ -493,6 +501,10 @@ cursor: pointer;
 .popup, .popup *, .popup * *, .close, button,.imageFace, .imageFace>*, .imageFace>*>*, .articleContent, .articleContent *{
   color: black;
     background: white;}
+
+.popup{
+  box-shadow: 5px 5px 5px 5px black;
+}
 
 p, option, select, div, input, label{
   background: inherit;

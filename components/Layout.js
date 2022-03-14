@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import Test from './testContent';
 import { useAppContext } from './Context';
 
 //import Navbar from './Navbar';
