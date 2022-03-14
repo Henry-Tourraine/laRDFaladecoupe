@@ -6,7 +6,7 @@ const CGU = () => {
         <p style={{ textAlign: "center", marginBottom: 0, fontSize: "1.2em" }}>Conditions Générales d’Utilisation</p>
         <p style={{ textAlign: "center", fontSize: "0.5em", margin: "0" }}>En vigueur au 15/04/2022</p>
 
-        <p>Ce document a pour but de définir le cadre dans lequel “l’Utilisateur” pourra se servir du site la-republique-de-france-a-la-decoupe.fr désigné par “le site”.
+        <p>Ce document a pour but de définir le cadre dans lequel “l’Utilisateur” pourra se servir du site la-republique-de-france-a-la-decoupe.fr désigné par &quot;le site&quot;.
             Toute réclamation pourra être faite à l’adresse suivante <a style={{ cursor: "pointer" }} onClick={() => { router.push("mailto:lardfaladecoupe@gmail.com") }}>lardfaladecoupe@gmail.com.</a></p>
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}> Article 1: Accès au site</p>
@@ -15,14 +15,14 @@ const CGU = () => {
         Pour y accéder l’Utilisateur a besoin d’une connexion internet et d’un crypto portefeuille (Metamask ou Phantom).
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 2: Collecte de données</p>
-        Le site ne collecte aucune donnée à caractère personnel et toutes données étant associées à l’Utilisateur le sont par l’adresse de son portefeuille.
+        Le site ne collecte aucune donnée à caractère personnel et toutes données étant associées à l’Utilisateur le sont par l&apos;adresse de son portefeuille.
         Les données suivantes sont stockées dans une base de données:
-        -les “articles” édités par l’Utilisateur
+        -les &quot;articles&quot; édités par l’Utilisateur
         -les intentions de votes pour chaque candidat
 
         Les données suivantes sont stockées dans la blockchain Polygon:
         -Les votes effectués par l’Utilisateur
-        -Les “corruption d’assesseurs” effectuées par l’Utilisateur
+        -Les &quot;corruption d’assesseurs&quot; effectuées par l’Utilisateur
         -Le “soudoiement des éditions de journaux” effectués par l’Utilisateur
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 3: Propriété intellectuelle</p>
@@ -30,7 +30,7 @@ const CGU = () => {
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 4: Responsabilité</p>
         L’éditeur du site s’engage à mener les élections jusqu’au bout et à rembourser l’Utilisateur le cas échéant. Il ne pourra pas être tenu responsable de pertes financières ou d’un dysfonctionnement du site  entraînés par le comportement malveillant d’un Utilisateur.
-        L'Utilisateur ne pourra être remboursé que dans le cas  où il aurait voté pour le candidat élu et que pour une quelconque raison il ne puisse pas retirer ses "tokens". Il ne le serait alors que du montant qu'il aura gagné.
+        L&apos;Utilisateur ne pourra être remboursé que dans le cas  où il aurait voté pour le candidat élu et que pour une quelconque raison il ne puisse pas retirer ses &quot;tokens&quot;. Il ne le serait alors que du montant qu&apos;il aura gagné.
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 5: Cookies</p>
         Le site n’utilise pas de cookies.
