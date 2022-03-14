@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
-  distDir: 'build',
   i18n: {
     // These are all the locales you want to support in
     // your application
