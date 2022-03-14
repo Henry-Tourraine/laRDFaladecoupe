@@ -270,7 +270,7 @@ function Home({ journaux, percent }) {
 
 
           </div>}*/}
-      "hello"
+      hello
     </div >
   )
 }
