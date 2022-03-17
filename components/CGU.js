@@ -7,7 +7,7 @@ const CGU = () => {
         <p style={{ textAlign: "center", fontSize: "0.5em", margin: "0" }}>En vigueur au 15/04/2022</p>
 
         <p>Ce document a pour but de définir le cadre dans lequel “l’Utilisateur” pourra se servir du site la-republique-democratique-de-france-a-la-decoupe.fr désigné par &quot;le site&quot;.
-            Toute réclamation pourra être faite à l’adresse suivante <a style={{ cursor: "pointer" }} onClick={() => { router.push("mailto:lardfaladecoupe@gmail.com") }}>lardfaladecoupe@gmail.com.</a></p>
+            Toute réclamation pourra être faite à l’adresse suivante: <a style={{ cursor: "pointer" }} onClick={() => { router.push("mailto:lardfaladecoupe@gmail.com") }}> lardfaladecoupe@gmail.com.</a></p>
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}> Article 1: Accès au site</p>
 
@@ -15,15 +15,15 @@ const CGU = () => {
         Pour y accéder l’Utilisateur a besoin d’une connexion internet et d’un crypto portefeuille (Metamask ou Phantom).
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 2: Collecte de données</p>
-        Le site ne collecte aucune donnée à caractère personnel et toutes données étant associées à l’Utilisateur le sont par l&apos;adresse de son portefeuille.
+        Le site ne collecte aucune donnée à caractère personnel et toutes données étant associées à l’Utilisateur le sont par le biais de l&apos;adresse de son portefeuille.
         Les données suivantes sont stockées dans une base de données:
-        -les &quot;articles&quot; édités par l’Utilisateur
-        -les intentions de votes pour chaque candidat
+        <br />-les &quot;articles&quot; édités par l’Utilisateur
+        <br />-les intentions de votes pour chaque candidat
 
         Les données suivantes sont stockées dans la blockchain Polygon:
-        -Les votes effectués par l’Utilisateur
-        -Les &quot;corruption d’assesseurs&quot; effectuées par l’Utilisateur
-        -Le “soudoiement des éditions de journaux” effectués par l’Utilisateur
+        <br />-Les votes effectués par l’Utilisateur
+        <br />-Les &quot;corruptions d’assesseurs&quot; effectuées par l’Utilisateur
+        <br />-Le “soudoiement des éditions de journaux” effectué par l’Utilisateur
 
         <p style={{ fontWeight: "bold", textDecoration: "underline" }}>Article 3: Propriété intellectuelle</p>
         Toute personne peut reprendre à son compte les visuels et le contrat intelligent utilisé par le site à condition qu’il ne le fasse pas de manière malicieuse dans le but de nuire au bon fonctionnement du site ou dans le but d’usurper l’identité du site.

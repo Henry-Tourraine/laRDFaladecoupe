@@ -165,12 +165,7 @@ function Home({ journaux, percent }) {
 
   let Address = process.env.address_contract;
 
-  if (typeof window !== "undefined") {
-    if (window.ethereum != 'undefined') {
-      (async () => await window.ethereum.request({ method: 'eth_requestAccounts' }))()
-    }
 
-  }
   let [ce, setC] = useState([]);
   const z = async () => {
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
@@ -195,10 +190,10 @@ function Home({ journaux, percent }) {
   { question: "Comment je participe ?", answer: <p>Tout d&apos;abord vous pouvez voter autant de fois que vous le désirez pour autant de candidats qu&#8217;il y en a sur ce trombinoscope.<br /> Vous pouvez ensuite tenter de déstabiliser ou favoriser des candidats en soudoyant les éditions de journaux l&apos;Univers et le Canard Laquais. <br /> Enfin vous pouvez également corrompre les assesseurs pour qu&apos;ils bourrent les urnes !</p> },
   { question: "Quel est l'intérêt ?", answer: <p>Dans la RDF, le président nouvellement élu redistribue généreusement l&apos;argent accumulé par tous les candidats durant la campagne à tous ses électeurs sous forme du token de la RDF.</p> },
   {
-    question: "Et concrètement ?", answer: <div><p>Le site restera ouvert au vote jusqu&#8217;au 23 avril à 23h59, la journée du 24 sera réservée pour le dépouillage SEULS LES VOTES et LES BOURRAGES d&#8217;URNE COMPTERONT les autres actions du site sont destinés à influencer les sondages et par conséquent les nouveaux venus sur le site.<br /> Enfin le 25 avril vous pourrez venir retirer vos tokens de la RDF (en cliquant sur le menu en haut à droite) si un des candidats pour lesquels vous avez voté est élu. <br /> Exemple: </p><p style={{ fontSize: "0.8em" }}>Les fonds totaux des votes, de la corruption et du soudoiement s&apos;élèvent à 5000 MATIC.<br /> Mr Jadot est élu avec 20 électeurs. Le token de la RDF aura une valeur de 250 MATIC. <br />Si vous avez voté 3 fois pour Mr. Jadot vous pourrez retirer sur votre wallet, au maximum 3 tokens soit 750 MATIC soit actuellement 967,5 € .</p></div>
+    question: "Et concrètement ?", answer: <div><p>Le site restera ouvert au vote jusqu&#8217;au 23 avril à 23h59, la journée du 24 sera réservée pour le dépouillage SEULS LES VOTES et LES BOURRAGES d&#8217;URNE COMPTERONT les autres actions du site sont destinés à influencer les sondages et par conséquent les nouveaux venus sur le site.<br /> Enfin le 25 avril vous pourrez venir retirer vos tokens de la RDF (en cliquant sur le menu en haut à droite) si un des candidats pour lesquels vous avez votés est élu. <br /> Exemple: </p><p style={{ fontSize: "0.8em" }}>Les fonds totaux des votes, de la corruption et du soudoiement s&apos;élèvent à 5000 MATIC.<br /> Mr Jadot est élu avec 20 électeurs. Le token de la RDF aura une valeur de 250 MATIC. <br />Si vous avez voté 3 fois pour Mr. Jadot vous pourrez retirer sur votre wallet, au maximum 3 tokens soit 750 MATIC soit actuellement 967,5 € .</p></div>
   },
-  { question: "Je n'arrive pas à voter", answer: <p style={{ display: "flex", flexFlow: "wrap row" }}>Pour cela il vous faut un crypto wallet comme <Link href="https://metamask.io/" ><a style={{ maxWidth: "6em", padding: 0, margin: 0, width: "fit-content !important" }}>Metamask</a></Link> ou <Link href="https://phantom.app/"><a style={{ padding: 0, margin: 0, width: "fit-content", maxWidth: "6em" }}>Phantom</a></Link></p> },
-  { question: "J&apos;ai une question", answer: <p>Vous pouvez nous contacter à lardfaladecoupe@gmail.com</p> }
+  { question: "Je n'arrive pas à voter", answer: <p style={{ display: "flex", flexFlow: "wrap row" }}>Pour cela il vous faut un crypto wallet comme <Link href="https://metamask.io/" ><a style={{ maxWidth: "6em", padding: 0, margin: 0, width: "fit-content !important" }}>Metamask</a></Link> ou <Link href="https://phantom.app/"><a style={{ padding: 0, margin: 0, width: "fit-content", maxWidth: "6em" }}>Phantom</a></Link>, vous devez sélectionner la chaîne Polygon</p> },
+  { question: "J'ai une question", answer: <p style={{ cursor: "pointer" }}>Vous pouvez nous contacter à lardfaladecoupe@gmail.com</p> }
   ])
   let [answerDisplay, setAnswerDisplay] = useState(questions.map(e => false))
 
@@ -229,7 +224,7 @@ function Home({ journaux, percent }) {
   return (
 
     < div className={styles.container} >
-
+      <hr />
       {new Date().getTime() > new Date(1650751201000).getTime() ? <div><President req={async () => await window.ethereum.request({ method: 'eth_requestAccounts' })} win={async () => await window.ethereum} /></div> : <div>
         <Presentation />
 
@@ -278,6 +273,15 @@ function Home({ journaux, percent }) {
 
     </div >
   )
+}
+
+export async function checkWallet() {
+  if (typeof window !== "undefined") {
+    if (window.ethereum != 'undefined') {
+      (async () => await window.ethereum.request({ method: 'eth_requestAccounts' }))()
+    }
+
+  }
 }
 
 export const getStaticProps = async (context) => {

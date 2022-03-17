@@ -77,6 +77,12 @@ img{
   
 
 }
+.carouselImage:hover{
+  cursor:pointer;
+  
+  
+
+}
 .carouselImage *{
   border-radius: 1vw 1vh;
   padding: 0.3em 0.5em;
@@ -219,15 +225,15 @@ button:hover{
 }
 .lire{
   border-radius: 1vw 1vw;
-
+margin:0;
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
   align-items: center;
   position: absolute;
   background: rgba(58, 69, 131, 0.753);
-  top: 0;
-  left: 0;
+  top: 0!important;
+  left: 0!important;
   width: 100%;
   height: 100%;
   opacity: 0;
@@ -437,7 +443,8 @@ cursor: pointer;
 }
 
 .navbarMenu:hover{
-  fill: rgb(94, 202, 235)!important;
+  fill: rgb(184, 46, 46)!important;
+  cursor: pointer;
   
 }
 .slideOut{
@@ -466,6 +473,9 @@ cursor: pointer;
   fill: white;
   color: white;
    filter: invert(100%);
+}
+.france{
+  background: inherit;
 }
 @media  (max-width: 1250px){
 
@@ -503,7 +513,7 @@ cursor: pointer;
     background: white;}
 
 .popup{
-  box-shadow: 5px 5px 5px 5px black;
+  box-shadow: 2px 2px 5px 5px rgba(116, 115, 115, 0.301);
 }
 
 p, option, select, div, input, label{

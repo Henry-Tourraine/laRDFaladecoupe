@@ -43,7 +43,7 @@ const RenderArticle = (candidate, positivity, template_nb, path_) => {
             },
             {
                 titre: <strong className="articleTitle">{candidate.fullname} s'habille mal !</strong>,
-                content: <div className="articleContent"><h1>{candidate.fullname} s'habille mal !</h1><p>Comme vous avez pu le voir lors de ses dernières apparitions télévisuelles, {candidate.fullname} portes des vêtements... et c'est déjà généreux de sa part d'avoir la délicatesse de cacher sa silhouette disgracieuse à nos yeux chastes !</p></div>
+                content: <div className="articleContent"><h1>{candidate.fullname} s'habille mal !</h1><p>Comme vous avez pu le voir lors de ses dernières apparitions télévisuelles, {candidate.fullname} porte des vêtements... et c'est déjà généreux de sa part d'avoir la délicatesse de cacher sa silhouette disgracieuse à nos yeux chastes !</p></div>
             },
         ]
         return template[template_nb];
