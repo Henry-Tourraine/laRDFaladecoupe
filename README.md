@@ -1,8 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
+La République Démocratique de France à la découpe is a project of crypto elections.
 ## Getting Started
 
-First, install the dependencies:
+Download the project and install the dependencies:
 
 ```bash
 npm install
